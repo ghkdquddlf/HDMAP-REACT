@@ -24,6 +24,35 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
+    <link rel="stylesheet" href="%PUBLIC_URL%/potree/libs/potree/potree.css" />
+    <script src="%PUBLIC_URL%/potree/libs/proj4/proj4.js"></script>
+    <script>
+      // proj4가 window에 등록되지 않은 경우 강제로 등록
+      if (typeof window.proj4 === "undefined" && typeof proj4 !== "undefined") {
+        window.proj4 = proj4;
+      }
+    </script>
+    <script src="%PUBLIC_URL%/potree/libs/jquery/jquery-3.1.1.js"></script>
+    <script src="%PUBLIC_URL%/potree/libs/three.js/build/three.js"></script>
+    <!-- three.js extra lines support (window.THREE에 안전하게 등록) -->
+    <script>
+      // LineSegmentsGeometry
+      document.write('<script src="' + window.location.origin + '/potree/libs/three.js/extra/lines/LineSegmentsGeometry.js"><\/script>');
+      // LineSegments2
+      document.write('<script src="' + window.location.origin + '/potree/libs/three.js/extra/lines/LineSegments2.js"><\/script>');
+      // LineGeometry
+      document.write('<script src="' + window.location.origin + '/potree/libs/three.js/extra/lines/LineGeometry.js"><\/script>');
+      // LineMaterial
+      document.write('<script src="' + window.location.origin + '/potree/libs/three.js/extra/lines/LineMaterial.js"><\/script>');
+      // Line2
+      document.write('<script src="' + window.location.origin + '/potree/libs/three.js/extra/lines/Line2.js"><\/script>');
+    </script>
+    <script src="%PUBLIC_URL%/potree/libs/other/BinaryHeap.js"></script>
+    <script src="%PUBLIC_URL%/potree/libs/tween/Tween.js"></script>
+    <script src="%PUBLIC_URL%/potree/libs/potree/potree.js"></script>
+    <!-- Leaflet for Potree Overview Map -->
+    <link rel="stylesheet" href="%PUBLIC_URL%/potree/libs/leaflet/leaflet.css" />
+    <script src="%PUBLIC_URL%/potree/libs/leaflet/leaflet.js"></script>
     <title>React App</title>
   </head>
   <body>
